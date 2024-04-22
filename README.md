@@ -1,3 +1,17 @@
+# Práctica 3 del Posgrado Full-Stack Web Technologies, por Ferran Bals
+
+## Proyecto: Modelo de datos para una biblioteca
+
+### Acerca del autor
+
+**Autor**: Ferran Bals Moreno
+
+**Perfil de GitHub:** [franksparks](https://github.com/franksparks)
+
+---
+
+# Enunciado original
+
 # Modelo de Datos
 
 En esta práctica hay que desarrollar el modelo de datos para una aplicación que resulte de tu interés. (No es necesario pensar en la autenticación aún, estudiaremos eso por separado.)
@@ -5,6 +19,7 @@ En esta práctica hay que desarrollar el modelo de datos para una aplicación qu
 Se trata, como otras veces, de hacer un _fork_ de este repositorio y trabajar en él.
 
 La solución del ejercicio debe ser un proyecto Javascript con:
+
 - El esquema de Prisma (`schema.prisma`).
 - La configuración para una base de datos (con `docker-compose.yml`).
 - Rellenado con unos pocos datos de prueba.
