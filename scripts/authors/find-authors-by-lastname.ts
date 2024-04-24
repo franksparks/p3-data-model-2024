@@ -1,4 +1,4 @@
-import { findAuthorByLastName } from "../../src/authors";
+import { findAuthorsByLastName } from "../../src/authors";
 
 if (process.argv.length < 2) {
   console.error("Usage: bun find-author-by-lastname.ts <author-lastname>");
@@ -7,5 +7,5 @@ if (process.argv.length < 2) {
 
 const [_bun, _script, identifier] = process.argv;
 
-const result = await findAuthorByLastName(identifier);
+const result = await findAuthorsByLastName(identifier);
 console.log(result);

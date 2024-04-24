@@ -1,4 +1,4 @@
-import { findAffiliateByLastName } from "../../src/affiliates";
+import { findAffiliatesByLastName } from "../../src/affiliates";
 
 if (process.argv.length < 2) {
   console.error("Usage: bun find-affiliate-by-lastname.ts <author-lastname>");
@@ -7,5 +7,5 @@ if (process.argv.length < 2) {
 
 const [_bun, _script, identifier] = process.argv;
 
-const result = await findAffiliateByLastName(identifier);
+const result = await findAffiliatesByLastName(identifier);
 console.log(result);

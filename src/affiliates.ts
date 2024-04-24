@@ -32,10 +32,10 @@ export const findAffiliateById = async (affiliateId: number): Promise<AffiliateO
   return result === null ? (console.log("No affiliate matches your criteria"), null) : result;
 };
 
-export const findAffiliateByLastName = async (
+export const findAffiliatesByLastName = async (
   lastName: string
-): Promise<AffiliateOutput | null> => {
-  const result = await db.affiliate.findFirst({
+): Promise<AffiliatesOutput[] | null> => {
+  const result = await db.affiliate.findMany({
     where: { lastName },
     include: { library: true },
   });
