@@ -11,19 +11,40 @@ datasource db {
 }
 
 model Library {
-  libraryId Int    @id @default(autoincrement())
+  libraryId Int      @id @default(autoincrement())
   name      String
   city      String
   address   String
-  book      Book[]
+  books     Book[]
+  members   Member[]
 }
 
 model Book {
   bookId    Int     @id @default(autoincrement())
   title     String
-  author    String
   pages     Int
   available Boolean @default(true)
   libraryId Int
   library   Library @relation(fields: [libraryId], references: [libraryId])
+  authorId  Int
+  author    Author  @relation(fields: [authorId], references: [authorId])
+}
+
+model Member {
+  memberId  Int     @id @default(autoincrement())
+  name      String
+  lastName  String
+  email     String
+  cellphone Int?
+  city      String
+  libraryId Int
+  library   Library @relation(fields: [libraryId], references: [libraryId])
+}
+
+model Author {
+  authorId Int    @id @default(autoincrement())
+  name     String
+  lastName String
+  city     String
+  books    Book[]
 }
