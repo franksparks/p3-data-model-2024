@@ -1,4 +1,4 @@
-import { findAllLibraries } from "../src/libraries";
+import { findAllLibraries } from "../../src/libraries";
 
 const libraries = await findAllLibraries();
 for (const { name, city, address } of libraries) {

@@ -42,9 +42,9 @@ model Member {
 }
 
 model Author {
-  authorId Int    @id @default(autoincrement())
-  name     String
-  lastName String
-  city     String
-  books    Book[]
+  authorId   Int     @id @default(autoincrement())
+  name       String
+  lastName   String
+  birthPlace String?
+  books      Book[]
 }

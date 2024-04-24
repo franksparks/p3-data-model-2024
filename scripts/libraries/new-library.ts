@@ -1,4 +1,4 @@
-import { newLibrary } from "../src/libraries";
+import { newLibrary } from "../../src/libraries";
 
 if (process.argv.length != 5) {
   console.error("Usage: bun new-library.ts <name> <city> <address>");

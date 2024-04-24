@@ -1,4 +1,4 @@
-import { findLibraryByName } from "../src/libraries";
+import { findLibraryByName } from "../../src/libraries";
 
 if (process.argv.length < 2) {
   console.error("Usage: bun find-library-by-name.ts <library-name>");
