@@ -8,6 +8,15 @@
 
 **Perfil de GitHub:** [franksparks](https://github.com/franksparks)
 
+Para insertar datos automáticamente necesitamos lanzar el comando - <code>npx prisma db seed</code>
+
+Este comando inyectará:
+
+- 5 bibliotecas
+- 5 autores
+- 10 socios
+- 25 libros
+
 ---
 
 # Enunciado original
