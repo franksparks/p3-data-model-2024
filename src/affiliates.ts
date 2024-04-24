@@ -3,6 +3,8 @@ import { db } from "./db";
 
 export type AffiliateOutput = Prisma.AffiliateCreateWithoutLibraryInput;
 
+export type AffiliatesOutput = Prisma.AffiliateCreateManyInput;
+
 export const newAffiliate = async (
   name: string,
   lastName: string,
@@ -27,7 +29,7 @@ export const findAffiliateById = async (affiliateId: number): Promise<AffiliateO
     where: { affiliateId },
     include: { library: true },
   });
-  return result === null ? (console.log("No library matches your criteria"), null) : result;
+  return result === null ? (console.log("No affiliate matches your criteria"), null) : result;
 };
 
 export const findAffiliateByLastName = async (
@@ -37,5 +39,16 @@ export const findAffiliateByLastName = async (
     where: { lastName },
     include: { library: true },
   });
-  return result === null ? (console.log("No library matches your criteria"), null) : result;
+  return result === null ? (console.log("No affiliate matches your criteria"), null) : result;
+};
+
+// Devolvemos los afiliados a una biblioteca concreta
+export const findAffiliatesByLibraryId = async (
+  libraryId: number
+): Promise<AffiliatesOutput[] | null> => {
+  const result = await db.affiliate.findMany({
+    where: { libraryId },
+    include: { library: true },
+  });
+  return result === null ? (console.log("No affiliate matches your criteria"), null) : result;
 };
