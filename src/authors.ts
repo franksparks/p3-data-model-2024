@@ -20,8 +20,8 @@ export const findAuthorById = async (authorId: number): Promise<AuthorOutput | n
   return result === null ? (console.log("No author matches your criteria"), null) : result;
 };
 
-export const findAuthorsByLastName = async (name: string): Promise<AuthorsOutput[] | null> => {
-  const result = await db.author.findMany({ where: { name } });
+export const findAuthorsByLastName = async (lastName: string): Promise<AuthorsOutput[] | null> => {
+  const result = await db.author.findMany({ where: { lastName } });
   return result === null ? (console.log("No author matches your criteria"), null) : result;
 };
 

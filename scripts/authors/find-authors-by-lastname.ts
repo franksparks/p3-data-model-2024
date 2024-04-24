@@ -5,7 +5,7 @@ if (process.argv.length < 2) {
   process.exit(1);
 }
 
-const [_bun, _script, identifier] = process.argv;
+const [_bun, _script, lastName] = process.argv;
 
-const result = await findAuthorsByLastName(identifier);
+const result = await findAuthorsByLastName(lastName);
 console.log(result);
