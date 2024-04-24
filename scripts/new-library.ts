@@ -1,7 +1,7 @@
 import { newLibrary } from "../src/libraries";
 
-if (process.argv.length < 4) {
-  console.error("Usage: bun new-user.ts <first-name> <last-name>");
+if (process.argv.length != 5) {
+  console.error("Usage: bun new-library.ts <name> <city> <address>");
   process.exit(1);
 }
 
