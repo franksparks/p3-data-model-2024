@@ -16,8 +16,9 @@ if (process.argv.length < 7 || process.argv.length > 8) {
     console.log("A new affiliate was added:");
 
     console.log(
-      `Data: ${result.name} ${result.lastName}, with email address ${result.email}, who lives on ${result.city}, is now affiliated with library with id ${result.libraryId}`
+      `New affiliate information: ${result.name} ${result.lastName}, with email address ${result.email}, who lives on ${result.city}`
     );
+    console.log(`Affiliated to: ${result.library.name}, in ${result.library.city}`);
     if (address != null) {
       console.log("Affiliate address: ", result.address);
     }

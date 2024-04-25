@@ -2,7 +2,6 @@ import type { Prisma } from "@prisma/client";
 import { db } from "./db";
 
 export type AffiliateOutput = Prisma.AffiliateCreateWithoutLibraryInput;
-
 export type AffiliatesOutput = Prisma.AffiliateCreateManyInput;
 
 export const newAffiliate = async (
@@ -22,6 +21,7 @@ export const newAffiliate = async (
       libraryId,
       address,
     },
+    include: { library: true },
   });
   return result;
 };
