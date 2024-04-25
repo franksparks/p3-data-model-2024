@@ -88,6 +88,7 @@ async function main() {
       lastName: "Affiliate_1",
       email: "aff__1__@library.com",
       city: "Barcelona",
+      address: "Gran de Gràcia, 1",
       libraryId: 1,
     },
   });
@@ -97,6 +98,7 @@ async function main() {
       lastName: "Affiliate_2",
       email: "aff__2__@library.com",
       city: "Madrid",
+      address: "Fuencarral, 23",
       libraryId: 2,
     },
   });
@@ -106,6 +108,7 @@ async function main() {
       lastName: "Affiliate_3",
       email: "aff__3__@library.com",
       city: "Manzanares",
+      address: "Libertad, 23",
       libraryId: 3,
     },
   });
@@ -114,7 +117,8 @@ async function main() {
       name: "Four",
       lastName: "Affiliate_4",
       email: "aff__4__@library.com",
-      city: "Vitora",
+      city: "Vitoria",
+      address: "Plaza de la Virgen Blanca, 3",
       libraryId: 4,
     },
   });
@@ -124,6 +128,7 @@ async function main() {
       lastName: "Affiliate_5",
       email: "aff__5__@library.com",
       city: "Santiago de Compostela",
+      address: "Praza da Inmaculada, 5",
       libraryId: 5,
     },
   });
@@ -159,7 +164,7 @@ async function main() {
       name: "Nine",
       lastName: "Affiliate_9",
       email: "aff__9__@library.com",
-      city: "Vitora",
+      city: "Vitoria",
       libraryId: 4,
     },
   });

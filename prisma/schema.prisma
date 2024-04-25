@@ -36,6 +36,7 @@ model Affiliate {
   lastName    String
   email       String
   city        String
+  address     String?
   libraryId   Int
   library     Library @relation(fields: [libraryId], references: [libraryId])
 }
