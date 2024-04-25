@@ -11,9 +11,9 @@ const affiliates = await findAffiliatesByLastName(identifier);
 console.log("Requested affiliates with lastname:", identifier);
 if (affiliates != null) {
   console.log("Affiliates found: ", affiliates.length);
-  for (const { name, lastName, email, city, libraryId, address } of affiliates) {
+  for (const { name, lastName, email, city, library, address } of affiliates) {
     console.log(
-      `${name} ${lastName}, with email address ${email}, who lives on ${city}, is affiliated with library with id ${libraryId}`
+      `${name} ${lastName}, with email address ${email}, who lives on ${city}, is affiliated with library ${library.name}`
     );
     if (address != null) {
       console.log("Address: ", address);
