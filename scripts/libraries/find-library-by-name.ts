@@ -1,6 +1,6 @@
 import { findLibraryByName } from "../../src/libraries";
 
-if (process.argv.length < 2) {
+if (process.argv.length != 3) {
   console.error("Usage: bun find-library-by-name.ts <library-name>");
   process.exit(1);
 }

@@ -1,6 +1,6 @@
 import { findBookById } from "../../src/books";
 
-if (process.argv.length < 2) {
+if (process.argv.length != 3) {
   console.error("Usage: bun find-books-by-book-id.ts <book-id>");
   process.exit(1);
 }
@@ -14,4 +14,9 @@ if (result != null) {
     `Book information: ${result.title}, written by ${result.author.name} ${result.author.lastName}, with ${result.pages} pages`
   );
   console.log(`Located to: ${result.library.name}, in ${result.library.city}`);
+  if (result.available) {
+    console.log("Book is available to borrow.");
+  } else {
+    console.log("Book is not available to borrow.");
+  }
 }

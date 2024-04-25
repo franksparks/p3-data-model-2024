@@ -14,4 +14,7 @@ if (result != null) {
     `Data: ${result.name} ${result.lastName}, with email address ${result.email}, who lives on ${result.city}`
   );
   console.log(`Affiliated to: ${result.library.name}, in ${result.library.city}`);
+  if (result.address != null) {
+    console.log("Affiliate address: ", result.address);
+  }
 }

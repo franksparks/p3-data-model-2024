@@ -1,7 +1,7 @@
 import { findAuthorsByLastName } from "../../src/authors";
 
-if (process.argv.length < 2) {
-  console.error("Usage: bun find-author-by-lastname.ts <author-lastname>");
+if (process.argv.length != 3) {
+  console.error("Usage: bun find-authors-by-lastname.ts <author-lastname>");
   process.exit(1);
 }
 

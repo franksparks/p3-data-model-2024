@@ -14,6 +14,6 @@ if (borrowings != null) {
   console.log("Borrowings found: ", borrowings.length);
 
   for (const { bookId } of borrowings) {
-    console.log(`book with id: ${bookId} was borrowed by affiliate with id: ${identifier} `);
+    console.log(`Book with id: ${bookId} was borrowed by affiliate with id: ${identifier} `);
   }
 }
