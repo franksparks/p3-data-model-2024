@@ -1,6 +1,6 @@
 import { findBorrowingsByAffiliateId } from "../../src/borrowings";
 
-if (process.argv.length < 2) {
+if (process.argv.length != 3) {
   console.error("Usage: bun find-borrowings-by-affiliate-id.ts <affiliate-id>");
   process.exit(1);
 }
