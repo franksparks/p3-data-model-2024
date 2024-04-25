@@ -8,4 +8,9 @@ if (process.argv.length < 2) {
 const [_bun, _script, identifier] = process.argv;
 
 const result = await findLibraryById(Number(identifier));
-console.log(result);
+console.log("Requested library with id:", identifier);
+if (result != null) {
+  console.log(
+    `Data: Library information: ${result.name} Library, located in ${result.city}, with adress ${result.address}`
+  );
+}

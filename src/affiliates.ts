@@ -54,3 +54,7 @@ export const findAffiliatesByLibraryId = async (
   });
   return result === null ? (console.log("No affiliate matches your criteria"), null) : result;
 };
+
+export const findAllAffiliates = async (): Promise<AffiliatesOutput[]> => {
+  return await db.affiliate.findMany();
+};

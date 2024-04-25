@@ -11,5 +11,15 @@ if (process.argv.length < 7 || process.argv.length > 8) {
   const [name, lastName, email, city, libraryId, address] = args;
 
   const result = await newAffiliate(name, lastName, email, city, Number(libraryId), address);
-  console.log("New affiliate inserted:", result);
+
+  if (result != null) {
+    console.log("A new affiliate was added:");
+
+    console.log(
+      `Data: ${result.name} ${result.lastName}, with email address ${result.email}, who lives on ${result.city}, is now affiliated with library with id ${result.libraryId}`
+    );
+    if (address != null) {
+      console.log("Affiliate address: ", result.address);
+    }
+  }
 }

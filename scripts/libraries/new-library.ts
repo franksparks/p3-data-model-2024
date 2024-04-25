@@ -9,4 +9,9 @@ const [_bun, _script, ...args] = process.argv;
 const [name, city, address] = args;
 
 const result = await newLibrary(name, city, address);
-console.log("Library inserted:", result);
+if (result != null) {
+  console.log("A new library was added:");
+  console.log(
+    `Library information: ${result.name} Library, located in ${result.city}, with adress ${result.address}`
+  );
+}
