@@ -10,6 +10,8 @@ const [_bun, _script, identifier] = process.argv;
 const affiliates = await findAffiliatesByLibraryId(Number(identifier));
 console.log("Requested affiliates of library with id:", identifier);
 if (affiliates != null) {
+  console.log("Affiliates found: ", affiliates.length);
+
   for (const { name, lastName, email, city, libraryId, address } of affiliates) {
     console.log(
       `${name} ${lastName}, with email address ${email}, who lives on ${city}, is affiliated with library with id ${libraryId}`
