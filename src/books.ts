@@ -4,6 +4,7 @@ import { db } from "./db";
 export type BookOutput = Prisma.BookCreateInput;
 export type BooksOutput = Prisma.BookCreateManyInput;
 export type BookByIdOutput = Prisma.BookAvgAggregateOutputType;
+export type BookAvailabilityOutput = { available: boolean | undefined };
 
 export const newBook = async (
   title: string,
@@ -28,24 +29,33 @@ export const findBooksByAuthor = async (authorId: number): Promise<BooksOutput[]
   const result = await db.book.findMany({
     where: { authorId },
   });
-  return result === null ? (console.log("No affiliate matches your criteria"), null) : result;
+  return result === null ? (console.log("No book matches your criteria"), null) : result;
 };
 
 export const findBooksByLibrary = async (libraryId: number): Promise<BooksOutput[] | null> => {
   const result = await db.book.findMany({
     where: { libraryId },
   });
-  return result === null ? (console.log("No affiliate matches your criteria"), null) : result;
+  return result === null ? (console.log("No book matches your criteria"), null) : result;
 };
 
 export const findBooksByTitle = async (title: string): Promise<BooksOutput[] | null> => {
   const result = await db.book.findMany({
     where: { title },
   });
-  return result === null ? (console.log("No affiliate matches your criteria"), null) : result;
+  return result === null ? (console.log("No book matches your criteria"), null) : result;
 };
 
-export const findBookById = async (bookId: number): Promise<BookByIdOutput | null> => {
+export const findBookById = async (bookId: number): Promise<BookOutput | null> => {
   const result = await db.book.findFirst({ where: { bookId } });
-  return result === null ? (console.log("No affiliate matches your criteria"), null) : result;
+  return result === null ? (console.log("No book matches your criteria"), null) : result;
+};
+
+export const bookAvailability = async (bookId: number): Promise<BookAvailabilityOutput | null> => {
+  const result = await findBookById(bookId);
+  if (result === null) {
+    console.log("No book matches your criteria");
+    return null;
+  }
+  return { available: result.available };
 };

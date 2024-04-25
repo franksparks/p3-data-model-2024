@@ -204,6 +204,7 @@ async function main() {
     data: {
       title: "La luz fantástica",
       pages: 102,
+      available: false,
       authorId: 1,
       libraryId: 2,
     },
@@ -236,6 +237,7 @@ async function main() {
     data: {
       title: "Ubik",
       pages: 201,
+      available: false,
       authorId: 2,
       libraryId: 1,
     },
@@ -308,6 +310,7 @@ async function main() {
     data: {
       title: "Terramar 5 - En el otro viento",
       pages: 305,
+      available: false,
       authorId: 3,
       libraryId: 5,
     },
@@ -316,6 +319,7 @@ async function main() {
     data: {
       title: "Fundación",
       pages: 401,
+      available: false,
       authorId: 4,
       libraryId: 1,
     },
@@ -356,6 +360,7 @@ async function main() {
     data: {
       title: "Dune",
       pages: 501,
+      available: false,
       authorId: 5,
       libraryId: 1,
     },
