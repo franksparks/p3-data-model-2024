@@ -7,5 +7,10 @@ if (process.argv.length < 2) {
 
 const [_bun, _script, lastName] = process.argv;
 
-const result = await findAuthorsByLastName(lastName);
-console.log(result);
+const authors = await findAuthorsByLastName(lastName);
+console.log("Requested authors with lastname:", lastName);
+if (authors != null) {
+  for (const { name, lastName, birthPlace } of authors) {
+    console.log(`${name} ${lastName}, who was born in ${birthPlace}`);
+  }
+}

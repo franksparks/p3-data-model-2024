@@ -9,4 +9,10 @@ const [_bun, _script, ...args] = process.argv;
 const [name, lastName, birthPlace] = args;
 
 const result = await newAuthor(name, lastName, birthPlace);
-console.log("Library inserted:", result);
+
+if (result != null) {
+  console.log("A new author was added:");
+  console.log(
+    `Author information: ${result.name} ${result.lastName} , born in ${result.birthPlace}`
+  );
+}
