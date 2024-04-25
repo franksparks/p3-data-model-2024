@@ -3,6 +3,7 @@ import { db } from "./db";
 
 export type BookOutput = Prisma.BookCreateInput;
 export type BooksOutput = Prisma.BookCreateManyInput;
+export type BookByIdOutput = Prisma.BookAvgAggregateOutputType;
 
 export const newBook = async (
   title: string,
@@ -41,5 +42,10 @@ export const findBooksByTitle = async (title: string): Promise<BooksOutput[] | n
   const result = await db.book.findMany({
     where: { title },
   });
+  return result === null ? (console.log("No affiliate matches your criteria"), null) : result;
+};
+
+export const findBookById = async (bookId: number): Promise<BookByIdOutput | null> => {
+  const result = await db.book.findFirst({ where: { bookId } });
   return result === null ? (console.log("No affiliate matches your criteria"), null) : result;
 };
