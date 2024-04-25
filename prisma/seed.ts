@@ -88,6 +88,7 @@ async function main() {
       lastName: "Affiliate_1",
       email: "aff__1__@library.com",
       city: "Barcelona",
+      address: "Gran de Gràcia, 1",
       libraryId: 1,
     },
   });
@@ -97,6 +98,7 @@ async function main() {
       lastName: "Affiliate_2",
       email: "aff__2__@library.com",
       city: "Madrid",
+      address: "Fuencarral, 23",
       libraryId: 2,
     },
   });
@@ -106,6 +108,7 @@ async function main() {
       lastName: "Affiliate_3",
       email: "aff__3__@library.com",
       city: "Manzanares",
+      address: "Libertad, 23",
       libraryId: 3,
     },
   });
@@ -114,7 +117,8 @@ async function main() {
       name: "Four",
       lastName: "Affiliate_4",
       email: "aff__4__@library.com",
-      city: "Vitora",
+      city: "Vitoria",
+      address: "Plaza de la Virgen Blanca, 3",
       libraryId: 4,
     },
   });
@@ -124,6 +128,7 @@ async function main() {
       lastName: "Affiliate_5",
       email: "aff__5__@library.com",
       city: "Santiago de Compostela",
+      address: "Praza da Inmaculada, 5",
       libraryId: 5,
     },
   });
@@ -159,7 +164,7 @@ async function main() {
       name: "Nine",
       lastName: "Affiliate_9",
       email: "aff__9__@library.com",
-      city: "Vitora",
+      city: "Vitoria",
       libraryId: 4,
     },
   });
@@ -199,6 +204,7 @@ async function main() {
     data: {
       title: "La luz fantástica",
       pages: 102,
+      available: false,
       authorId: 1,
       libraryId: 2,
     },
@@ -231,6 +237,7 @@ async function main() {
     data: {
       title: "Ubik",
       pages: 201,
+      available: false,
       authorId: 2,
       libraryId: 1,
     },
@@ -303,6 +310,7 @@ async function main() {
     data: {
       title: "Terramar 5 - En el otro viento",
       pages: 305,
+      available: false,
       authorId: 3,
       libraryId: 5,
     },
@@ -311,6 +319,7 @@ async function main() {
     data: {
       title: "Fundación",
       pages: 401,
+      available: false,
       authorId: 4,
       libraryId: 1,
     },
@@ -351,6 +360,7 @@ async function main() {
     data: {
       title: "Dune",
       pages: 501,
+      available: false,
       authorId: 5,
       libraryId: 1,
     },
@@ -415,6 +425,87 @@ async function main() {
     bookTwentyThree,
     bookTwentyFour,
     bookTwentyFive
+  );
+
+  //Borrowings
+  const borrowOne = await prisma.borrowing.create({
+    data: {
+      active: false,
+      affiliateId: 1,
+      bookId: 11,
+    },
+  });
+  const borrowTwo = await prisma.borrowing.create({
+    data: {
+      active: false,
+      affiliateId: 1,
+      bookId: 12,
+    },
+  });
+  const borrowThree = await prisma.borrowing.create({
+    data: {
+      active: false,
+      affiliateId: 1,
+      bookId: 13,
+    },
+  });
+  const borrowFour = await prisma.borrowing.create({
+    data: {
+      active: false,
+      affiliateId: 1,
+      bookId: 14,
+    },
+  });
+  const borrowFive = await prisma.borrowing.create({
+    data: {
+      affiliateId: 1,
+      bookId: 15,
+    },
+  });
+  const borrowSix = await prisma.borrowing.create({
+    data: {
+      active: false,
+      affiliateId: 2,
+      bookId: 1,
+    },
+  });
+  const borrowSeven = await prisma.borrowing.create({
+    data: {
+      affiliateId: 2,
+      bookId: 2,
+    },
+  });
+  const borrowEight = await prisma.borrowing.create({
+    data: {
+      affiliateId: 3,
+      bookId: 6,
+    },
+  });
+  const borrowNine = await prisma.borrowing.create({
+    data: {
+      affiliateId: 4,
+      bookId: 16,
+    },
+  });
+  const borrowTen = await prisma.borrowing.create({
+    data: {
+      affiliateId: 5,
+      bookId: 21,
+    },
+  });
+
+  console.log(
+    "Borrowings added:",
+    borrowOne,
+    borrowTwo,
+    borrowThree,
+    borrowFour,
+    borrowFive,
+    borrowSix,
+    borrowSeven,
+    borrowEight,
+    borrowNine,
+    borrowTen
   );
 }
 

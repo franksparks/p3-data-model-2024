@@ -10,7 +10,8 @@ export const newAffiliate = async (
   lastName: string,
   email: string,
   city: string,
-  libraryId: number
+  libraryId: number,
+  address?: string
 ) => {
   const result = await db.affiliate.create({
     data: {
@@ -19,6 +20,7 @@ export const newAffiliate = async (
       email,
       city,
       libraryId,
+      address,
     },
   });
   return result;

@@ -1,0 +1,11 @@
+import { findBorrowingsByAffiliateId } from "../../src/borrowings";
+
+if (process.argv.length != 3) {
+  console.error("Usage: bun find-borrowings-by-affiliate-id.ts <affiliate-id>");
+  process.exit(1);
+}
+
+const [_bun, _script, identifier] = process.argv;
+
+const result = await findBorrowingsByAffiliateId(Number(identifier));
+console.log(result);
