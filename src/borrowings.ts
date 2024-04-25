@@ -23,3 +23,13 @@ export const findBorrowingsByAffiliateId = async (
   });
   return result === null ? (console.log("No affiliate matches your criteria"), null) : result;
 };
+
+export const findActiveBorrowingsByAffiliateId = async (
+  affiliateId: number
+): Promise<BorrowingsOutput[] | null> => {
+  const result = await db.borrowing.findMany({
+    where: { affiliateId, active: true },
+    include: { book: true },
+  });
+  return result === null ? (console.log("No affiliate matches your criteria"), null) : result;
+};

@@ -421,6 +421,87 @@ async function main() {
     bookTwentyFour,
     bookTwentyFive
   );
+
+  //Borrowings
+  const borrowOne = await prisma.borrowing.create({
+    data: {
+      active: false,
+      affiliateId: 1,
+      bookId: 11,
+    },
+  });
+  const borrowTwo = await prisma.borrowing.create({
+    data: {
+      active: false,
+      affiliateId: 1,
+      bookId: 12,
+    },
+  });
+  const borrowThree = await prisma.borrowing.create({
+    data: {
+      active: false,
+      affiliateId: 1,
+      bookId: 13,
+    },
+  });
+  const borrowFour = await prisma.borrowing.create({
+    data: {
+      active: false,
+      affiliateId: 1,
+      bookId: 14,
+    },
+  });
+  const borrowFive = await prisma.borrowing.create({
+    data: {
+      affiliateId: 1,
+      bookId: 15,
+    },
+  });
+  const borrowSix = await prisma.borrowing.create({
+    data: {
+      active: false,
+      affiliateId: 2,
+      bookId: 1,
+    },
+  });
+  const borrowSeven = await prisma.borrowing.create({
+    data: {
+      affiliateId: 2,
+      bookId: 2,
+    },
+  });
+  const borrowEight = await prisma.borrowing.create({
+    data: {
+      affiliateId: 3,
+      bookId: 6,
+    },
+  });
+  const borrowNine = await prisma.borrowing.create({
+    data: {
+      affiliateId: 4,
+      bookId: 16,
+    },
+  });
+  const borrowTen = await prisma.borrowing.create({
+    data: {
+      affiliateId: 5,
+      bookId: 21,
+    },
+  });
+
+  console.log(
+    "Borrowings added:",
+    borrowOne,
+    borrowTwo,
+    borrowThree,
+    borrowFour,
+    borrowFive,
+    borrowSix,
+    borrowSeven,
+    borrowEight,
+    borrowNine,
+    borrowTen
+  );
 }
 
 main();
