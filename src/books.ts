@@ -21,6 +21,10 @@ export const newBook = async (
       libraryId,
       authorId,
     },
+    include: {
+      author: true,
+      library: true,
+    },
   });
   return result;
 };
@@ -46,8 +50,11 @@ export const findBooksByTitle = async (title: string): Promise<BooksOutput[] | n
   return result === null ? (console.log("No book matches your criteria"), null) : result;
 };
 
-export const findBookById = async (bookId: number): Promise<BookOutput | null> => {
-  const result = await db.book.findFirst({ where: { bookId } });
+export const findBookById = async (bookId: number): Promise<BooksOutput | null> => {
+  const result = await db.book.findFirst({
+    where: { bookId },
+    include: { library: true, author: true },
+  });
   return result === null ? (console.log("No book matches your criteria"), null) : result;
 };
 

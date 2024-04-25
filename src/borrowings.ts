@@ -30,7 +30,7 @@ export const newBorrowingCheckingAvailability = async (affiliateId: number, book
     where: { bookId: bookId },
     data: { available: false },
   });
-  return { result, updateBook };
+  return result;
 };
 
 export const returnBook = async (bookId: number) => {
@@ -70,6 +70,7 @@ export const findActiveBorrowings = async (): Promise<BorrowingsOutput[]> => {
     where: {
       active: true,
     },
+    include: { affiliate: true },
   });
 };
 
