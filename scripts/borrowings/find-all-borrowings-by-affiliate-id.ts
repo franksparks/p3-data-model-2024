@@ -1,7 +1,7 @@
 import { findBorrowingsByAffiliateId } from "../../src/borrowings";
 
 if (process.argv.length < 2) {
-  console.error("Usage: bun find-affiliate-by-library-id.ts <affiliate-id>");
+  console.error("Usage: bun find-borrowings-by-affiliate-id.ts <affiliate-id>");
   process.exit(1);
 }
 

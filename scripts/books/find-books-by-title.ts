@@ -1,7 +1,7 @@
 import { findBooksByTitle } from "../../src/books";
 
 if (process.argv.length < 2) {
-  console.error("Usage: bun find-books-by-title.ts <lastname>");
+  console.error("Usage: bun find-books-by-title.ts <title>");
   process.exit(1);
 }
 

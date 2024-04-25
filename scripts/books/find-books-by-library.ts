@@ -1,7 +1,7 @@
 import { findBooksByLibrary } from "../../src/books";
 
 if (process.argv.length < 2) {
-  console.error("Usage: bun find-books-by-author-id.ts <author-id>");
+  console.error("Usage: bun find-books-by-library-id.ts <library-id>");
   process.exit(1);
 }
 
