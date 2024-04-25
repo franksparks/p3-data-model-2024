@@ -4,7 +4,7 @@ import { db } from "./db";
 export type BookOutput = Prisma.BookCreateInput;
 export type BooksOutput = Prisma.BookCreateManyInput;
 export type BookByIdOutput = Prisma.BookAvgAggregateOutputType;
-export type BookAvailabilityOutput = { available: boolean | undefined };
+export type BookAvailabilityOutput = boolean | undefined;
 
 export const newBook = async (
   title: string,
@@ -57,5 +57,9 @@ export const bookAvailability = async (bookId: number): Promise<BookAvailability
     console.log("No book matches your criteria");
     return null;
   }
-  return { available: result.available };
+  if (result === undefined) {
+    return true;
+  } else {
+    return result.available;
+  }
 };

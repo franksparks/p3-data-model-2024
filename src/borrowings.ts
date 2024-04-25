@@ -1,5 +1,6 @@
 import type { Prisma } from "@prisma/client";
 import { db } from "./db";
+import { bookAvailability } from "./books";
 
 export type BorrowingOutput = Prisma.BorrowingCreateInput;
 export type BorrowingsOutput = Prisma.BorrowingCreateManyInput;
@@ -10,6 +11,24 @@ export const newBorrowing = async (affiliateId: number, bookId: number) => {
       affiliateId,
       bookId,
     },
+  });
+  return result;
+};
+
+export const newBorrowingCheckingAvailability = async (affiliateId: number, bookId: number) => {
+  const available = await bookAvailability(bookId);
+
+  if (available == false) {
+    console.log("Book is not available for borrowing.");
+    return 0;
+  }
+
+  const result = await db.borrowing.create({
+    data: {
+      affiliateId,
+      bookId,
+    },
+    include: { book: true },
   });
   return result;
 };
