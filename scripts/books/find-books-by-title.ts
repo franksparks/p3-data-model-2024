@@ -7,5 +7,10 @@ if (process.argv.length < 2) {
 
 const [_bun, _script, title] = process.argv;
 
-const result = await findBooksByTitle(title);
-console.log(result);
+const books = await findBooksByTitle(title);
+console.log("Requested books with title such as:", title);
+if (books != null) {
+  for (const { title, pages } of books) {
+    console.log(`${title}, ${pages} pages long.`);
+  }
+}

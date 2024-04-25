@@ -16,4 +16,10 @@ const result = await newBook(
   Number(authorId)
 );
 
-console.log("Book inserted:", result);
+if (result != null) {
+  console.log("A new book was added:");
+  console.log(
+    `Book information: ${result.title}, written by ${result.author.name} ${result.author.lastName}, with ${result.pages} pages`
+  );
+  console.log(`Available at: ${result.library.name}, in ${result.library.city}`);
+}
