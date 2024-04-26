@@ -41,7 +41,7 @@ Para lanzar el modelo de datos debemos seguir los siguientes pasos:
 1. Clonar el repositorio
 2. Instalar las dependencias -> <code>bun install</code>
 3. Lanzar el contenedor de Postgres -> <code>docker-compose -f docker docker-compose.yml up -d</code>
-4. Generar la base de datos mediante <code>bun x prisma push</code>
+4. Generar la base de datos mediante <code>bun x prisma db push</code>
 
 5. Poblar la base de datos -> <code>bun x prisma db seed</code>
 
