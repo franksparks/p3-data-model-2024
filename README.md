@@ -14,6 +14,13 @@
 
 Se ha diseñado un modelo de datos para la gestión de una red de bibliotecas y los préstamos de libros a sus socios.
 
+Diagrama del modelo de datos:
+
+<img src="./img/model.png"/>
+
+Modelo detallado por Prismaliser:
+<img src="./img/prismaliser.png"/>
+
 <b>Descripción de las entidades:</b>
 
 - Las <u><b>bibliotecas</b></u> cuentan con socios (affiliates) y libros. Una biblioteca puede tener varios socios y varios libros.
