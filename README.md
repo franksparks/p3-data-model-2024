@@ -8,14 +8,95 @@
 
 **Perfil de GitHub:** [franksparks](https://github.com/franksparks)
 
-Para insertar datos automáticamente necesitamos lanzar el comando - <code>npx prisma db seed</code>
+## Descripción de la práctica realizada
 
-Este comando inyectará:
+### Introducción
 
-- 5 bibliotecas
-- 5 autores
-- 10 socios
-- 25 libros
+Se ha diseñado un modelo de datos para la gestión de una red de bibliotecas y los préstamos de libros a sus socios.
+
+<b>Descripción de las entidades:</b>
+
+- Las <u><b>bibliotecas</b></u> cuentan con socios (affiliates) y libros. Una biblioteca puede tener varios socios y varios libros.
+- Un <u><b>socio</b></u> lo es de una biblioteca, y cuenta con x préstamos (tanto activos como inactivos).
+- Un <u><b>libro</b></u> se encuentra en una biblioteca y está escrito por un autor, pero puede formar parte de varios préstamos (sólo 1 de ellos activo).
+- Un <u><b>autor</b></u> puede haber escrito varios libros.
+- Un <u><b>préstamo</b></u> relaciona el socio y el libro prestado.
+
+<b>Notas:</b>
+
+- Un socio no puede tener más de 3 libros en préstamo simultáneamente (préstamos activos).
+- Un libro en préstamo no puede ser prestado a otro socio.
+
+### Instrucciones
+
+Para lanzar el modelo de datos debemos seguir los siguientes pasos:
+
+1. Clonar el repositorio
+2. Instalar las dependencias -> <code>bun install</code>
+3. Lanzar el contenedor de Postgres -> <code>docker-compose -f docker docker-compose.yml up -d</code>
+4. Generar la base de datos mediante <code>bun x prisma push</code>
+
+5. Poblar la base de datos -> <code>bun x prisma db seed</code>
+
+   Este comando inyectará:
+
+   - 10 socios (Affiliate)
+   - 5 autores (Author)
+   - 25 libros (Book)
+   - 10 préstamos (Borrowing)
+   - 5 bibliotecas (Library)
+
+6. Ejecutar los scripts proporcionados
+
+## Descripción de los scripts proporcionados
+
+### Libraries
+
+- <code>all-libraries.ts</code> -> Devuelve el listado de las bibliotecas.
+- <code>find-library-by-id.ts</code> -> Búsqueda por libraryId. Devuelve una biblioteca.
+- <code>find-library-by-name.ts</code> -> Búsqueda por libraryId. Devuelve una biblioteca.
+- <code>new-library.ts</code> -> Permite introducir una nueva biblioteca.
+
+### Author
+
+- <code>all-authors.ts</code> -> Devuelve el listado de los autores.
+- <code>find-author-by-id.ts</code> -> Búsqueda por authorId. Devuelve un autor.
+- <code>find-authors-by-lastname.ts</code> -> Búsqueda por lastName. Devuelve una lista de autores.
+- <code>new-author.ts</code> -> Permite introducir un nuevo autor.
+
+### Book
+
+- <code>book-availability.ts</code> -> Dado un bookId, devuelve un booleano según si el libro está o no en préstamo.
+- <code>find-book-by-id.ts</code> -> Búsqueda por bookId. Devuelve un libro.
+- <code>find-books-by-author.ts</code> -> Búsqueda por authorId. Devuelve una lista de libros.
+- <code>find-books-by-library.ts</code> -> Búsqueda por libraryId. Devuelve una lista de libros.
+- <code>find-books-by-title.ts</code> -> Búsqueda por title. Devuelve una lista de libros.
+- <code>new-book.ts</code> -> Permite introducir un nuevo socio a una biblioteca.
+
+### Affiliate
+
+- <code>all-affiliates.ts</code> -> Devuelve el listado de los socios, de todas las bibliotecas.
+- <code>find-affiliate-by-id.ts</code> -> Búsqueda por affiliateId. Devuelve un socio.
+- <code>find-affiliates-by-lastname.ts</code> -> Busca socios por lastName. Devuelve una lista de socios.
+- <code>find-affiliates-by-library-id.ts</code> -> Devuelve el listado de los socios de una biblioteca en concreto.
+- <code>new-affiliate.ts</code> -> Permite introducir un nuevo socio a una biblioteca.
+
+### Borrowing
+
+- <code>all-active-borrowings.ts</code> -> Devuelve el listado de préstamos activos.
+- <code>find-active-borrowing-by-book-id.ts</code> ->
+- <code>find-active-borrowing-by-affiliate-id.ts</code> -> Búsqueda por affiliateId. Devuelve el listado de préstamos activos por parte de un socio.
+- <code>find-all-borrowings-by-affiliate-id.ts</code> ->
+- Búsqueda por affiliateId. Devuelve el listado de préstamos, activos o pasados, por parte de un socio.
+- <code>new-borrowing-availability-check.ts</code> -> -> Se genera un nuevo préstamo por affiliateId y bookId.
+  - Se comprueba que el usuario no tenga ya 3 préstamos activos.
+  - Se comprueba que el libro esté disponible.
+  - Se genera el préstamo.
+  - se actualiza el estado del libro a no disponible.
+- <code>return-book.ts</code> -> Devolución de un préstamo por bookId.
+  - Se comprueba que el libro no esté disponible.
+  - Se actualiza el préstamo a inactivo.
+  - se actualiza el estado del libro a disponible.
 
 ---
 
