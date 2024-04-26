@@ -87,20 +87,18 @@ Para lanzar el modelo de datos debemos seguir los siguientes pasos:
 - <code>all-active-borrowings.ts</code> -> Devuelve el listado de préstamos activos.
 - <code>find-active-borrowing-by-book-id.ts</code> ->
 - <code>find-active-borrowing-by-affiliate-id.ts</code> -> Búsqueda por affiliateId. Devuelve el listado de préstamos activos por parte de un socio.
-- <code>find-all-borrowings-by-affiliate-id.ts</code> ->
-- Búsqueda por affiliateId. Devuelve el listado de préstamos, activos o pasados, por parte de un socio.
+- <code>find-all-borrowings-by-affiliate-id.ts</code> -> Búsqueda por affiliateId. Devuelve el listado de préstamos, activos o pasados, por parte de un socio.
 - <code>new-borrowing-availability-check.ts</code> -> Se genera un nuevo préstamo por affiliateId y bookId.
   - Se comprueba que el usuario no tenga ya 3 préstamos activos.
   - Se comprueba que el libro esté disponible.
   - Se genera el préstamo.
   - se actualiza el estado del libro a no disponible.
 - <code>return-book.ts</code> -> Devolución de un préstamo por bookId.
-
   - Se comprueba que el libro no esté disponible.
   - Se actualiza el préstamo a inactivo.
   - se actualiza el estado del libro a disponible.
 
-- ### Libraries
+### Libraries
 
 - <code>all-libraries.ts</code> -> Devuelve el listado de las bibliotecas.
 - <code>find-library-by-id.ts</code> -> Búsqueda por libraryId. Devuelve una biblioteca.
