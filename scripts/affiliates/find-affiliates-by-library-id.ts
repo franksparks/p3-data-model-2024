@@ -1,6 +1,6 @@
 import { findAffiliatesByLibraryId } from "../../src/affiliates";
 
-if (process.argv.length < 2) {
+if (process.argv.length != 3) {
   console.error("Usage: bun find-affiliate-by-library-id.ts <library-id>");
   process.exit(1);
 }

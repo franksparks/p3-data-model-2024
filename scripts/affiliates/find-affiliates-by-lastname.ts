@@ -1,6 +1,6 @@
 import { findAffiliatesByLastName } from "../../src/affiliates";
 
-if (process.argv.length < 2) {
+if (process.argv.length != 3) {
   console.error("Usage: bun find-affiliate-by-lastname.ts <author-lastname>");
   process.exit(1);
 }
