@@ -70,3 +70,12 @@ export const bookAvailability = async (bookId: number): Promise<BookAvailability
     return result.available;
   }
 };
+
+export const findAllBooks = async (): Promise<BooksOutput[]> => {
+  return await db.book.findMany({
+    include: {
+      author: true,
+      library: true,
+    },
+  });
+};

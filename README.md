@@ -50,30 +50,14 @@ Para lanzar el modelo de datos debemos seguir los siguientes pasos:
 
 ## Descripción de los scripts proporcionados
 
-### Libraries
-
-- <code>all-libraries.ts</code> -> Devuelve el listado de las bibliotecas.
-- <code>find-library-by-id.ts</code> -> Búsqueda por libraryId. Devuelve una biblioteca.
-- <code>find-library-by-name.ts</code> -> Búsqueda por libraryId. Devuelve una biblioteca.
-- <code>new-library.ts</code> -> Permite introducir una nueva biblioteca.
-
-### Author
+### Authors
 
 - <code>all-authors.ts</code> -> Devuelve el listado de los autores.
 - <code>find-author-by-id.ts</code> -> Búsqueda por authorId. Devuelve un autor.
 - <code>find-authors-by-lastname.ts</code> -> Búsqueda por lastName. Devuelve una lista de autores.
 - <code>new-author.ts</code> -> Permite introducir un nuevo autor.
 
-### Book
-
-- <code>book-availability.ts</code> -> Dado un bookId, devuelve un booleano según si el libro está o no en préstamo.
-- <code>find-book-by-id.ts</code> -> Búsqueda por bookId. Devuelve un libro.
-- <code>find-books-by-author.ts</code> -> Búsqueda por authorId. Devuelve una lista de libros.
-- <code>find-books-by-library.ts</code> -> Búsqueda por libraryId. Devuelve una lista de libros.
-- <code>find-books-by-title.ts</code> -> Búsqueda por title. Devuelve una lista de libros.
-- <code>new-book.ts</code> -> Permite introducir un nuevo socio a una biblioteca.
-
-### Affiliate
+### Affiliates
 
 - <code>all-affiliates.ts</code> -> Devuelve el listado de los socios, de todas las bibliotecas.
 - <code>find-affiliate-by-id.ts</code> -> Búsqueda por affiliateId. Devuelve un socio.
@@ -81,22 +65,40 @@ Para lanzar el modelo de datos debemos seguir los siguientes pasos:
 - <code>find-affiliates-by-library-id.ts</code> -> Devuelve el listado de los socios de una biblioteca en concreto.
 - <code>new-affiliate.ts</code> -> Permite introducir un nuevo socio a una biblioteca.
 
-### Borrowing
+### Books
+
+- <code>all-books.ts</code> -> Devuelve el listado de los libros.
+- <code>book-availability.ts</code> -> Dado un bookId, devuelve un booleano según si el libro está o no en préstamo.
+- <code>find-book-by-id.ts</code> -> Búsqueda por bookId. Devuelve un libro.
+- <code>find-books-by-author.ts</code> -> Búsqueda por authorId. Devuelve una lista de libros.
+- <code>find-books-by-library.ts</code> -> Búsqueda por libraryId. Devuelve una lista de libros.
+- <code>find-books-by-title.ts</code> -> Búsqueda por title. Devuelve una lista de libros.
+- <code>new-book.ts</code> -> Permite introducir un nuevo socio a una biblioteca.
+
+### Borrowings
 
 - <code>all-active-borrowings.ts</code> -> Devuelve el listado de préstamos activos.
 - <code>find-active-borrowing-by-book-id.ts</code> ->
 - <code>find-active-borrowing-by-affiliate-id.ts</code> -> Búsqueda por affiliateId. Devuelve el listado de préstamos activos por parte de un socio.
 - <code>find-all-borrowings-by-affiliate-id.ts</code> ->
 - Búsqueda por affiliateId. Devuelve el listado de préstamos, activos o pasados, por parte de un socio.
-- <code>new-borrowing-availability-check.ts</code> -> -> Se genera un nuevo préstamo por affiliateId y bookId.
+- <code>new-borrowing-availability-check.ts</code> -> Se genera un nuevo préstamo por affiliateId y bookId.
   - Se comprueba que el usuario no tenga ya 3 préstamos activos.
   - Se comprueba que el libro esté disponible.
   - Se genera el préstamo.
   - se actualiza el estado del libro a no disponible.
 - <code>return-book.ts</code> -> Devolución de un préstamo por bookId.
+
   - Se comprueba que el libro no esté disponible.
   - Se actualiza el préstamo a inactivo.
   - se actualiza el estado del libro a disponible.
+
+- ### Libraries
+
+- <code>all-libraries.ts</code> -> Devuelve el listado de las bibliotecas.
+- <code>find-library-by-id.ts</code> -> Búsqueda por libraryId. Devuelve una biblioteca.
+- <code>find-library-by-name.ts</code> -> Búsqueda por libraryId. Devuelve una biblioteca.
+- <code>new-library.ts</code> -> Permite introducir una nueva biblioteca.
 
 ---
 
