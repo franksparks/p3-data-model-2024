@@ -18,7 +18,7 @@ Diagrama del modelo de datos:
 
 <img src="./img/model.png"/>
 
-Modelo detallado por Prismaliser:
+Modelo detallado por [Prismaliser](https://prismaliser.app/):
 <img src="./img/prismaliser.png"/>
 
 <b>Descripción de las entidades:</b>
@@ -40,9 +40,8 @@ Para lanzar el modelo de datos debemos seguir los siguientes pasos:
 
 1. Clonar el repositorio
 2. Instalar las dependencias -> <code>bun install</code>
-3. Lanzar el contenedor de Postgres -> <code>docker-compose -f docker docker-compose.yml up -d</code>
+3. Lanzar el contenedor de Postgres -> <code>docker-compose -f docker/docker-compose.yml up -d</code>
 4. Generar la base de datos mediante <code>bun x prisma db push</code>
-
 5. Poblar la base de datos -> <code>bun x prisma db seed</code>
 
    Este comando inyectará:
@@ -53,16 +52,11 @@ Para lanzar el modelo de datos debemos seguir los siguientes pasos:
    - 10 préstamos (Borrowing)
    - 5 bibliotecas (Library)
 
-6. Ejecutar los scripts proporcionados
+6. Acceder a prisma studio -> <code>bun x prisma studio</code>
+
+7. Ejecutar los scripts proporcionados.
 
 ## Descripción de los scripts proporcionados
-
-### Authors
-
-- <code>all-authors.ts</code> -> Devuelve el listado de los autores.
-- <code>find-author-by-id.ts</code> -> Búsqueda por authorId. Devuelve un autor.
-- <code>find-authors-by-lastname.ts</code> -> Búsqueda por lastName. Devuelve una lista de autores.
-- <code>new-author.ts</code> -> Permite introducir un nuevo autor.
 
 ### Affiliates
 
@@ -71,6 +65,13 @@ Para lanzar el modelo de datos debemos seguir los siguientes pasos:
 - <code>find-affiliates-by-lastname.ts</code> -> Busca socios por lastName. Devuelve una lista de socios.
 - <code>find-affiliates-by-library-id.ts</code> -> Devuelve el listado de los socios de una biblioteca en concreto.
 - <code>new-affiliate.ts</code> -> Permite introducir un nuevo socio a una biblioteca.
+
+### Authors
+
+- <code>all-authors.ts</code> -> Devuelve el listado de los autores.
+- <code>find-author-by-id.ts</code> -> Búsqueda por authorId. Devuelve un autor.
+- <code>find-authors-by-lastname.ts</code> -> Búsqueda por lastName. Devuelve una lista de autores.
+- <code>new-author.ts</code> -> Permite introducir un nuevo autor.
 
 ### Books
 
